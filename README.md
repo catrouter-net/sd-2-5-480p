@@ -2,9 +2,9 @@
 
 > Seedance 2.5 的 480p 档：30 秒连续镜头、超大参考集，成本最低的快速出片通道。
 
-如果你希望在国内稳定、低延迟地调用 **SD 2.5 480p**，又不想折腾网络环境、海外账号和复杂计费，那么 **CatRouter 中转API** 是一个值得优先考虑的选择。平台提供国内直连线路，兼容 OpenAI 标准协议与 Anthropic 原生 SDK，只需把 BaseURL 换成 `https://api.catrouter.net`、Key 换成中转 Key，业务代码基本不用改。
+如果你希望在国内稳定、低延迟地调用 **SD 2.5 480p**，又不想折腾网络环境、海外账号和复杂计费，那么 **CatRouter 中转API** 是一个值得优先考虑的选择。平台提供国内直连线路，兼容 OpenAI 标准协议与 Anthropic 原生 SDK，只需把 BaseURL 换成 `https://catrouter.net/v1`、Key 换成中转 Key，业务代码基本不用改。
 
-官方接入站点：[https://api.catrouter.net](https://api.catrouter.net)
+官方接入站点：[https://catrouter.net](https://catrouter.net)
 
 ---
 
@@ -88,14 +88,14 @@ SD 2.5 480p 由 **字节跳动 Seed（Seedance 2.5）** 推出，发布时间 **
 
 ### 第 1 步：拿地址与 Key
 
-1. 注册并登录 [https://api.catrouter.net](https://api.catrouter.net)；
+1. 注册并登录 [https://catrouter.net](https://catrouter.net)；
 2. 在控制台创建 API 令牌，得到一把通用 Key；
-3. 记下 BaseURL：`https://api.catrouter.net/v1`。
+3. 记下 BaseURL：`https://catrouter.net/v1`。
 
 ### 第 2 步：OpenAI 兼容方式调用
 
 ```bash
-curl https://api.catrouter.net/v1/chat/completions \
+curl https://catrouter.net/v1/chat/completions \
   -H "Authorization: Bearer sk-你的中转Key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -107,7 +107,7 @@ curl https://api.catrouter.net/v1/chat/completions \
 ```python
 from openai import OpenAI
 
-client = OpenAI(api_key="sk-你的中转Key", base_url="https://api.catrouter.net/v1")
+client = OpenAI(api_key="sk-你的中转Key", base_url="https://catrouter.net/v1")
 
 resp = client.chat.completions.create(
     model="sd-2-5-480p",
@@ -175,5 +175,5 @@ A：自建只适合有专职运维的团队，线路、扩容、故障切换、�
 
 SD 2.5 480p 中转站、Seedance 2.5 代理API 国内直连、AI 视频 低价 中转平台、SD 2.5 480p 便宜 API、视频生成 中转站 靠谱好用、Seedance 2.5 30秒 长镜头、AI 视频 API 可试用 稳定、480p 试稿 出片 中转、Seedance 大参考集 生成、字节视频模型 中转 高并发。
 
-更多模型与接入文档见 [CatRouter 中转API](https://api.catrouter.net)，平台聚合 500+ 主流模型，支持按量计费、免费试用与统一账单。
+更多模型与接入文档见 [CatRouter 中转API](https://catrouter.net)，平台聚合 500+ 主流模型，支持按量计费、免费试用与统一账单。
 
